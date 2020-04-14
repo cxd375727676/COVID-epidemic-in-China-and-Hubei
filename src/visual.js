@@ -890,7 +890,7 @@ function author_info() {
   var end = document.createElement("div");
   end.setAttribute("style", "position: absolute; bottom: 5px; right: 7px; font-size: 12; font-family: KaiTi; color: #003399");
   end.setAttribute("id", "end");
-  end.innerText = "制作：陈孝东";
+  end.innerText = "制作：author_name";
   var body = document.getElementsByTagName("body")[0];
   body.appendChild(end);
 }
