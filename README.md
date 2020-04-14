@@ -20,4 +20,4 @@ Thanks for Jannchie, refer <https://github.com/Jannchie/Historical-ranking-data-
 
 - exe_hbyq.bat: 启动python脚本
 
-- result: 两个MP4文件，可视化展示
+- result: 两个MP4文件，可视化结果展示
