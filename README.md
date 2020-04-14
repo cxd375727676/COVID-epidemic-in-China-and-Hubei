@@ -11,7 +11,7 @@ Thanks for Jannchie, refer <https://github.com/Jannchie/Historical-ranking-data-
 
  2. 增加背景音乐 raw_bgm.mp3(victory)
 
- 3. 中国各省新冠累计确诊数据 chn_ncp.csv 和湖北省各地市州省新冠累计确诊数据hbyq.csv
+ 3. 中国各省新冠累计确诊数据 chn_ncp.csv 和湖北省各地市州省新冠累计确诊数据hbyq.csv【数据来源：Wind】
 
  4. 调整config.js适合自己的屏幕
 
