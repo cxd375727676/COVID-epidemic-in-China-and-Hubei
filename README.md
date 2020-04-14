@@ -1,7 +1,8 @@
 # [Dynamic-Bar]COVID epidemic in China and Hubei
 ## 中国各省和湖北各地市州累计新冠确诊可视化（动态柱状图）
 Thanks for Jannchie, refer <https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js>
-借助Jannchie的code，做了些微小改动，可视化中国、湖北疫情。
+
+借助Jannchie的code，做了些微小改动，可视化中国、湖北疫情
 
 ### 具体修改如下：
 - src
