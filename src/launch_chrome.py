@@ -20,6 +20,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pynput.keyboard import Key, Controller
+import contextlib
 #import pydub
 
 
@@ -63,28 +64,26 @@ def display(test=False):
             js_top = "var q=document.documentElement.scrollTop=0"
             driver.execute_script(js_top)
             time.sleep(0.5)
-            start_screencap()
-            WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "end"))) # 等待网页可视化结束
-            time.sleep(5)
-            end_screencap()          
-    except:
-        pass
+            with EV_screencap():
+                WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "end"))) # 等待网页可视化结束
+                time.sleep(5)        
     finally:
         driver.quit()
 
 
-def start_screencap():
-    keyboard = Controller()
-    with keyboard.pressed(Key.ctrl):    #组合按键ctrl+F1
-        keyboard.press(Key.f1)
-        keyboard.release(Key.f1)
-
-
-def end_screencap():
-    keyboard = Controller()
-    with keyboard.pressed(Key.ctrl):    #组合按键ctrl+F2
-        keyboard.press(Key.f2)
-        keyboard.release(Key.f2) 
+@contextlib.contextmanager
+def EV_screencap():
+    """ EV录屏上下文管理器，基于生成器 """
+    def comb_key(kb, key):
+        with kb.pressed(Key.ctrl):
+            kb.press(key)
+            kb.release(key)
+    kb = Controller()
+    comb_key(kb, Key.f1) # 开始录屏
+    try:
+        yield
+    finally:
+       comb_key(kb, Key.f2)  # 结束录屏     
 
 
 #def edit_mp3(start, end, input_, output):
